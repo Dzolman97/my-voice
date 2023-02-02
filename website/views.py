@@ -15,7 +15,7 @@ def home():
       full_prompt = f"{base_prompt} Human: {user_prompt}\n\nAI:"
 
       response = openai.Completion.create(
-         model=os.environ['API_FT_MODEL'], #needs to be a env to keep model secret.
+         model=os.environ['API_FT_MODEL'], #needs to be an env to keep model secret.
          prompt=full_prompt,
          temperature=0.9,
          max_tokens=750,
