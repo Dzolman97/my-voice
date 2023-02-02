@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+{% block title %}
+My Voice Construction
+{% endblock %}
+
+{% block content %}
+
+<div class="container" style="padding-bottom: 25%;">
+
+</div>
+
+<div class="container d-flex justify-content-center h-50">
+
+   <div class="card w-75 mx-auto bg-warning text-black">
+      <div class="card-body">
+      <h5 class="card-title text-center">This area is under construction.</h5>
+      
+         {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+               {% for messages in messages %}
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                     Incorrect secret phrase, try again.
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        
+                     </button>
+                  </div>
+               {% endfor %}
+            {% endif %}
+         {% endwith %}
+      
+      <form method="POST" value="/secretphrase">
+         <div class="input-group mb-3">
+               <span class="input-group-text" id="inputGroup-sizing-default">Give the secret phrase to enter:</span>
+               <input type="password" class="form-control" id="phrase" name="phrase">
+               <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+         </div>
+      </form>
+   </div>
+   
+</div>
+
+{% endblock %}

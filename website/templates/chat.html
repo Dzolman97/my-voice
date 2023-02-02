@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block title %}
+My Voice Chat
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-bottom: 25%;">
+
+</div>
+
+<div class="container d-flex justify-content-center h-50">
+
+   <div class="card w-75 mx-auto bg-secondary text-black">
+      <div class="card-body">
+            {% if result %}
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                     <h5>Jim:</h5>
+                     <h6> {{ result }} </h6>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        
+                     </button>
+                  </div>
+            {% endif %}
+      
+      <form method="POST">
+         <div class="input-group mb-3">
+               <span class="input-group-text" id="inputGroup-sizing-default">Enter a prompt, be as detailed as possible.</span>
+               <input type="text" class="form-control" id="prompt" name="prompt" placeholder="Enter prompt">
+               <button type="submit" class="btn btn-success"><i class="bi bi-send-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                  <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/></svg></i>
+               </button>
+            </div>
+         </div>
+      </form>
+   </div>
+   
+</div>
+
+{% endblock %}
